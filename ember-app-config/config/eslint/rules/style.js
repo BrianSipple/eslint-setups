@@ -1,5 +1,3 @@
-"use strict";
-
 module.exports = {
   "rules": {
 
@@ -64,7 +62,7 @@ module.exports = {
     "max-depth": [1, 6],
 
     // specify the maximum length of a line in your program
-    "max-len": [1, 110, 2, {
+    "max-len": [1, 120, 2, {
       "ignoreComments": true,
       "ignoreUrls": true,
       "ignorePattern": "^\\s*var\\s.+=\\s*require\\s*\\("
@@ -79,14 +77,26 @@ module.exports = {
     // specify the maximum number of statement allowed in a function
     "max-statements": 0,
 
-    // require a capital letter for constructors
-    "new-cap": [2, {"newIsCap": true}],
+    // require a capital letter for constructors, with exceptions for capitalized Ember functions
+    "new-cap": [
+      2,
+      {
+        "newIsCap": true,
+        "capIsNewExceptions": [
+          "A",
+          "K"
+        ]
+      }
+    ],
 
     // disallow the omission of parentheses when invoking a constructor with no arguments
     "new-parens": 0,
 
     // allow/disallow an empty newline after var statement
     "newline-after-var": [0, "always"],
+
+    // require new line after each method call in a chain to make it more readable and easy to maintain
+    "newline-per-chained-call": [2, {"ignoreChainWithDepth": 3}],
 
     // disallow use of the Array constructor
     "no-array-constructor": 2,
@@ -134,7 +144,7 @@ module.exports = {
     "no-ternary": 0,
 
     // disallow trailing whitespace at the end of lines
-    "no-trailing-spaces": 2,
+    "no-trailing-spaces": [2, { "skipBlankLines": true }],
 
     // disallow dangling underscores in identifiers
     "no-underscore-dangle": 0,
@@ -168,7 +178,8 @@ module.exports = {
     "quote-props": [2, "as-needed", { "keywords": false, "unnecessary": true, "numbers": false }],
 
     // specify whether double or single quotes should be used
-    "quotes": [2, "single", "avoid-escape"],
+    // TODO: Enforce when this rule is improved to be cool with template literals: https://github.com/eslint/eslint/issues/5234
+    "quotes": [0, "single", "avoid-escape"],
 
     // Require JSDoc comment
     "require-jsdoc": 0,

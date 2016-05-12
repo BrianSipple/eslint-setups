@@ -1,9 +1,8 @@
 'use strict';
 
 module.exports = {
-  "extends": "./eslint.js",
   "env": {
-    "node": true
+    "embertest": true
   },
 
   // overrides of our primary ESLint settings that are specifically targeted to
@@ -21,10 +20,11 @@ module.exports = {
     "newline-after-var": 0,
     "no-console": 0,
     "no-invalid-this": 0,
+    "no-undef": 0,  /* TODO: Stay tuned for more robust whitelisting options */
     "object-curly-spacing": [2, "always"],
     "prefer-arrow-callback": 0,
-    "prefer-const": 0,
     "prefer-reflect": 0,
-    "space-before-function-paren": [0, { "anonymous": "always", "named": "always" }]
+    "space-before-function-paren": [0, { "anonymous": "always", "named": "always" }],
+
   }
 };

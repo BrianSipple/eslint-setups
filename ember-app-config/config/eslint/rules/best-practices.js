@@ -6,6 +6,11 @@ module.exports = {
     // Enforces getter/setter pairs in objects
     "accessor-pairs": 0,
 
+
+    // NOTE: Ember stubs out a few function expressions that, at bare minimum,
+    // take an empty function callback.
+    "array-callback-return": 0,
+
     // treat var statements as if they were block scoped
     "block-scoped-var": 2,
 
@@ -13,7 +18,7 @@ module.exports = {
     "complexity": [0, 11],
 
     // require return statements to either always or never specify values
-    "consistent-return": 2,
+    "consistent-return": 0,
 
     // specify curly brace conventions for all control statements
     "curly": [2, "all"],
@@ -47,9 +52,6 @@ module.exports = {
 
     // disallow else after a return in an if
     "no-else-return": 0,
-
-    // disallow use of labels for anything other then loops and switches
-    "no-empty-label": 2,
 
     // disallow use of empty destructuring patterns
     "no-empty-pattern": 0,
@@ -85,7 +87,7 @@ module.exports = {
     "no-iterator": 2,
 
     // disallow use of labeled statements
-    "no-labels": 2,
+    "no-labels": [2, {"allowLoop": true, "allowSwitch": true}],
 
     // disallow unnecessary nested blocks
     "no-lone-blocks": 2,

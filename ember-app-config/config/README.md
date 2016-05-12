@@ -1,1 +1,1 @@
-With the exception of this README, the contents here would go inside of an Ember project's config directory. The project's root `.eslintrc` config could then just extend `eslint.js`, while the `.estlintrc` in the project's test directory could extend `eslint-tests.js`.
+With the exception of this README, the contents here would go inside of an Ember project's config directory. The project's root `.eslintrc.js` config could then just extend `./config/eslint/eslint.js`, while the `.estlintrc` in the project's test directory could extend `./config/eslint/eslint-tests.js`.
